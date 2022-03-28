@@ -1,8 +1,10 @@
 require 'socket'
 
-TCPSocket.open('localhost', 4242)
+server = TCPSocket.open('localhost', 4242)
 
-sleep 60
+server.puts 'Hello, server!'
 
-server_connection.close
+server_response = server.gets
+puts "Server response #{server_response}"
+
 server.close
