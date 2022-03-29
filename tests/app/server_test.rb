@@ -14,6 +14,7 @@ class ServerTest < Test::Unit::TestCase
 
     emails = content.split('\n')
     assert_equal 1, emails.size
+    assert_equal 'teste@teste.com', emails[0]
   end
 
   def test_get_email

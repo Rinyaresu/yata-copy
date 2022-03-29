@@ -15,6 +15,7 @@ loop do
 
   if first_line == "GUARDAR email\n"
     email = second_line.chomp
+    File.write('db/emails.txt', email)
     response = "CRIADO\nEmail <#{email}> guardado com sucesso"
     client.puts response
   elsif first_line == "GET email\n"
