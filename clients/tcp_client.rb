@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'socket'
 
 server = TCPSocket.open('localhost', 4242)
@@ -13,4 +15,3 @@ loop do
 end
 
 server.close
-

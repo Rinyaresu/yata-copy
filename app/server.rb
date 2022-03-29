@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'socket'
 
 socket = TCPServer.new(4242)
@@ -21,6 +23,7 @@ loop do
   elsif first_line == "GET email\n"
     email = second_line.chomp
     response = "OK\n#{email}"
+
     client.puts response
   end
 
