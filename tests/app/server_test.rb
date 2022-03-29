@@ -9,6 +9,11 @@ class ServerTest < Test::Unit::TestCase
     @server.puts "GUARDAR email\nteste@teste.com"
 
     assert_equal "CRIADO\nEmail <teste@teste.com> guardado com sucesso\n", response
+
+    content = File.read('./db/emails.txt')
+
+    emails = content.split('\n')
+    assert_equal 1, emails.size
   end
 
   def test_get_email
